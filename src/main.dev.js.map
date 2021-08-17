@@ -1,0 +1,1 @@
+{"version":3,"sources":["main.js"],"names":["document","querySelector","innerHTML"],"mappings":";;AAAA;;AAEAA,QAAQ,CAACC,aAAT,CAAuB,MAAvB,EAA+BC,SAA/B","sourcesContent":["import './style.css'\n\ndocument.querySelector('.app').innerHTML = `\n  <h1>B. Academy</h1>\n  <p>Boas vindas à semana de pré-work para o Bootcamp em React.js 😁</p>\n`\n"],"file":"main.dev.js"}
