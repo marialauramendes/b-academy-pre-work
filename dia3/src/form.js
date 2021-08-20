@@ -26,12 +26,11 @@ function captalize(nome){
 
 
 const form = document.querySelector('[data-js="form"]');
-
 const select = document.createElement('select');
-form.appendChild(select);
-select.setAttribute('multiple', '');
-
 const colorOptions = ['#0099e5', '#511378', '#ff6600', '#666666', '#e2001a'];
+
+const colorsContainer = document.createElement("div");
+colorsContainer.style.display = "flex";
 
 colorOptions.forEach(color => {
   const option = document.createElement('option');
@@ -40,25 +39,21 @@ colorOptions.forEach(color => {
   select.appendChild(option);
 });
 
-const colorBox
+function createColorBox(e){
+  colorsContainer.innerHTML = "";
+  Array.from(e.target.selectedOptions).forEach(option => {
+    const colorBox = document.createElement('div');
+    colorBox.style.height = "100px";
+    colorBox.style.width = "100px";
+    colorBox.style.background = option.value;
 
-// const optionBlue = {
-//   name: 'blue',
-//   hex: '#0099e5'
-// }
+    colorsContainer.appendChild(colorBox);
+  })
+}
 
-// const optionPurple = {
-//   name: 'purple',
-//   hex: '#511378'
-// }
-
-// const optionOrange = {
-//   name: 'orange',
-//   hex: '#ff6600'
-// }
+select.addEventListener('change', createColorBox)
 
 
-
-
-
-
+form.appendChild(select);
+select.setAttribute('multiple', '');
+document.body.appendChild(colorsContainer);
