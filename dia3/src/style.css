@@ -6,3 +6,48 @@
   color: #2c3e50;
   margin-top: 60px;
 }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.16);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 60px;
+}
+
+.form input {
+  margin-bottom: 30px;
+}
+label {
+  display: block;
+}
+
+select {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.cars {
+  display: flex;
+}
+
+.cars form {
+  width: 20%;
+  margin-right: 30px;
+}
+.cars input {
+  width: 100%;
+}
+
+table {
+  width: 80%;
+}
+th {
+  border-top: none;
+  border-left: none;
+}

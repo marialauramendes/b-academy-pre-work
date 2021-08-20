@@ -56,4 +56,4 @@ select.addEventListener('change', createColorBox)
 
 form.appendChild(select);
 select.setAttribute('multiple', '');
-document.body.appendChild(colorsContainer);
+form.appendChild(colorsContainer);
