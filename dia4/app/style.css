@@ -2,7 +2,68 @@ body {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.cars {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+form {
+  width: 30%;
+  margin-right: 30px;
+}
+
+label {
+  display: block;
+  text-align: left;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+input {
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.16);
+  border-color: rgba(0, 0, 0, 0.16);
+  background: transparent;
+}
+input[type="color"] {
+  width: 40px;
+  height: 40px;
+}
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 225px;
+  height: 40px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  margin: 0 auto;
+  background-color: #129bdb;
+  color: #fff;
+  border-radius: 5px;
+}
+
+table {
+  width: 65%;
+}
+th {
+  border-top: none;
+  border-left: none;
 }
