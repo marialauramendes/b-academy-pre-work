@@ -13,6 +13,12 @@ export const post = (url, data) => request(url, {
   body: JSON.stringify(data)
 });
 
-export const del = () => {};
+export const del = (url, data) => request(url, {
+  method: 'DELETE',
+  headers: {
+    'content-type': 'application/json',
+  },
+  body: JSON.stringify(data)
+});
 
 

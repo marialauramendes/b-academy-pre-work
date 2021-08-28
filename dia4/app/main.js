@@ -1,5 +1,5 @@
 import './style.css';
-import {get, post} from './http';
+import {get, post, del} from './http';
 
 const url = 'http://localhost:3333/cars';
 const form = document.querySelector('[data-js="cars-form"]');
@@ -58,8 +58,9 @@ async function handleSubmit(event){
     return
   }
   const noContent = document.querySelector('[data-js="no-content"]');
-
-  table.removeChild(noContent);
+  if(noContent) {
+    table.removeChild(noContent);
+  }
 
   createTableRow(data);
   event.target.reset();
@@ -80,12 +81,40 @@ function createTableRow(data){
   ];
 
   const tr = document.createElement('tr');
+  tr.dataset.plate = data.plate;
+
   elements.forEach((element) => {
     const td = elementTypes[element.type](element.value);
     tr.appendChild(td);
   })
 
+  const button = document.createElement('button');
+  button.textContent = 'Excluir';
+  button.dataset.plate = data.plate;
+
+  button.addEventListener('click', handleDelete);
+
+  tr.appendChild(button);
+
   table.appendChild(tr);
+}
+
+async function handleDelete(event){
+  const button = event.target;
+  const plate = button.dataset.plate;
+
+  const result = await del(url, {plate});
+
+  if (result.error){
+    console.log('erro ao deletar', result.message);
+    return
+  }
+
+  const tr = document.querySelector(`[data-plate="${plate}"]`);
+  table.removeChild(tr);
+
+  //deleta o evento em memória depois de utilizado
+  button.removeEventListener('click', handleDelete);
 }
 
 function createNoCarRow(){
